@@ -30,14 +30,14 @@ template <typename T>
 int LinkedList<T>::size() const
 {
     int count=0;
-    Node<T> temp = m_front;
+    Node<T>* temp = m_front;
     
-    whiule(temp != nullptr)
+    while(temp != nullptr)
     {
-        count++
+        count++;
         temp = temp->getNext();
     }
-	return(0);
+	return(count);
 }
 
 template <typename T>
@@ -116,7 +116,7 @@ bool LinkedList<T>::removeBack()
 
 	if(isEmpty())
     {
-        return (isRemoved);
+        return isRemoved;
     }
     else
     {
